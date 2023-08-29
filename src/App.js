@@ -28,15 +28,11 @@ function Todolist(){
         temp[i].status=!temp[i].status
         setTodos([...temp])
     }
-    // function addtask(){
-    //     var nt = document.getElementById("dd").value;
-    //     setTodos([...todos,{title:nt,status: false}])
-    // }
+    
     return(
         <div className="box">
             <h1>Todolist</h1>
-            {/* <input type="text" id="dd"/> */}
-            {/* <button onClick={()=>{addtask}}>Add Task</button> */}
+            
             {
                 todos.map((todo,i)=>{
                     return (
