@@ -1,58 +1,55 @@
 import React from "react";
-import Ipl from './Ipl';
-import './index.css';
-function App(){
-    var[x,setX]=React.useState([
+
+function Todolist(){
+    var[todos,setTodos]=React.useState([
         {
-            teamname:'Mumbai Indians',
-      players:[
-        'Rohit Sharma',
-        'Surya Kumar Yadav',
-        'Ishan Kishan',
-        'Jasprit Bhumrah',
-        'David Warner'
-      ]
-    },
-    {
-      teamname:'Royal Challengers Bengaluru',
-      players:[
-        'Virat Kohli',
-        'Faf Duplesis',
-        'Dinesh Karthik',
-        'Glenn Maxwell',
-        'Mohammad Siraj'
-      ]
-    },
-    {
-      teamname:'Sunrisers Hyderabad',
-      players:[
-        'Kane Williamson',
-        'Manish Pandey',
-        'Bhuvaneshwar Kumar',
-        'David Warner',
-        'Karan Sharma'
-      ]
-    },
-    {
-      teamname:'Chennai Super Kings',
-      players:[
-        'Mahender Singh Dhoni',
-        'Suresh Raina',
-        'Ravindra Jadeja',
-        'Ambati Rayudu',
-        'Ben Stokes'
-      ]
-    } 
-]  )
-return(
-    <div className="box">
-        <h1>Welcome to Edupoly React</h1>
+            title : 'clear bill',
+            status : 'false'
+        },
         {
-            x.map((team)=>{
-                return <Ipl team={team.players} tname={team.teamname}></Ipl>
-            })
-        }
-    </div>
-)
-} 
-export default App; 
+            title : 'new house',
+            status : 'true'
+        },
+        {
+            title : 'new bike',
+            status : 'false'
+        },
+        {
+            title : 'new car',
+            status : 'false'
+        },
+        {
+            title : 'current bill',
+            status : 'true'
+        },
+    ])
+    function done(i){
+        var temp = [...todos]
+        temp[i].status=!temp[i].status
+        setTodos([...temp])
+    }
+    // function addtask(){
+    //     var nt = document.getElementById("dd").value;
+    //     setTodos([...todos,{title:nt,status: false}])
+    // }
+    return(
+        <div className="box">
+            <h1>Todolist</h1>
+            {/* <input type="text" id="dd"/> */}
+            {/* <button onClick={()=>{addtask}}>Add Task</button> */}
+            {
+                todos.map((todo,i)=>{
+                    return (
+                        <div className="box">
+                        <li style={(todo.status===true)?{backgroundColor:"red"}:{backgroundColor:"blue"}}>{todo.title}
+                        <button onClick={()=>{done(i)}}>Done</button>
+                        <button>Undo</button>
+                        </li>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
+}
+export default Todolist
