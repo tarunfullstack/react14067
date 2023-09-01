@@ -1,11 +1,14 @@
 import React from "react"
-import Vacation from "./Vacation";
+import Review from "./Review"
+import Products from "./Products"
 function App(){
     
 
     return(
-        <div >
-           <Vacation></Vacation>
+        <div className="mybox">
+            {/* <h1 style={{textAlign : "center"}}>Edupoly Reviews</h1> */}
+           {/* <Review></Review> */}
+           <Products></Products>
         </div>
     )
 }

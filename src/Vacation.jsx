@@ -21,7 +21,7 @@ function(){
                   <h2>{a.name}</h2>  
                 <p>{a.info}</p>
                 <span>${a.price}</span>
-                </div>
+                            </div>
         )
     })
 }
