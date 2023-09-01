@@ -1,15 +1,21 @@
-import React from "react"
-import Review from "./Review"
-import Products from "./Products"
+import { useState } from "react";
+import First from "./First";
+import MyContext  from "./Mycontext";
+
+ 
 function App(){
-    
+    var[x,setX]=useState(102)
 
     return(
+        <MyContext.Provider value={x}>
         <div className="mybox">
-            {/* <h1 style={{textAlign : "center"}}>Edupoly Reviews</h1> */}
-           {/* <Review></Review> */}
-           <Products></Products>
+            <h1>Welcome to Edupoly ReactJS Training</h1>
+            <h2>x::{x}</h2>
+            <button onClick={()=>{setX(x+1)}}>Increment</button>
+            <First x={x}></First>
+            
         </div>
+        </MyContext.Provider>
     )
 }
 export default App;
