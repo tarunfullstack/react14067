@@ -1,31 +1,16 @@
-import React, { useEffect } from "react"
-import Address from "./Address"
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 function App(){
-    var firstnameRef = React.useRef()
-    var lastnameRef = React.useRef()
-    var addressRef = React.useRef()
-    
-      useEffect(()=>{
-        firstnameRef.current.focus(); 
-      },[])
-      function focusLastname(e){
-        if(e.key==="Enter"){
-            lastnameRef.current.focus()
-        }
-    }
-        function focusAddress(e){
-            if(e.key==="Enter"){
-                addressRef.current.focus()
-            }
-      }
-return(
-    <div className="mybox">
-        <h1>Welcome to Edupoly ReactJs Training</h1>
-        <input type="text" ref={firstnameRef} onKeyUp={(ev)=>{focusLastname(ev)}}/>
-        <br />
-        <input type="text" ref={lastnameRef}onKeyUp={(ev)=>{focusAddress(ev)}}/>
-        <Address ref={addressRef}></Address>
-    </div>
-)
+    return(
+        <div className="mybox">
+            <h1>Welcome to Edupoly ReactJS Training</h1>
+            <Link to="/courses">Courses</Link>
+            &nbsp;&nbsp;&nbsp;
+            <Link to="/aboutus">Aboutus</Link>
+            &nbsp;&nbsp;&nbsp;
+            <Link to="/countries">Countries</Link>
+            <Outlet></Outlet>
+        </div>
+    )
 }
-export default App
+export default App;
