@@ -1,16 +1,10 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import Score from "./Score";
 function App(){
-    return(
-        <div className="mybox">
-            <h1>Welcome to Edupoly ReactJS Training</h1>
-            <Link to="/courses">Courses</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link to="/aboutus">Aboutus</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link to="/countries">Countries</Link>
-            <Outlet></Outlet>
-        </div>
-    )
+return(
+    <div className="">
+        <Score></Score>
+    </div>
+)
 }
-export default App;
+export default App
