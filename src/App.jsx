@@ -1,16 +1,17 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import Counter from "./Counter";
+import Todolist from "./Todolist";
 function App(){
     return(
-        <div className="mybox">
-            <h1>Welcome to Edupoly ReactJS Training</h1>
-            <Link to="/courses">Courses</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link to="/aboutus">Aboutus</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link to="/countries">Countries</Link>
-            <Outlet></Outlet>
+        <Provider store={store}>
+        <div className="mybox"> 
+            <h1>India is my country</h1>
+            <Counter></Counter>
+            <Todolist></Todolist>
         </div>
+        </Provider>
     )
 }
 export default App;
