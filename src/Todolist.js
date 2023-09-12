@@ -1,13 +1,13 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 function Todolist(props){
-    console.log("Todolist props ::",props)
-    var [nt,setNT]=useState('')
+    console.log("Todolist ::",props)
+   var [nt,setNT]= useState('')
     return(
         <div className="mybox">
             <h1>Todolist</h1>
             <input type="text" onChange={(e)=>{setNT(e.target.value)}}/>
-            <button onClick={()=>{props.dispatch({type:'ADDTODO',payload:nt})}}>Add Todo</button>
+            <button onClick={()=>{props.dispatch({type:"ADDTODO",payload : nt})}}>Add Todo</button>
             {props.t.todos.map((todo)=>{
                 return <li>{todo}</li>
             })}
