@@ -7,7 +7,7 @@ function App(){
     return(
         <Provider store={store}>
         <div className="mybox"> 
-            <h1>India is my country</h1>
+            <h1>Welcome to ReactJS Training</h1>
             <Counter></Counter>
             <Todolist></Todolist>
         </div>

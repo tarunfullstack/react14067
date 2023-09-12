@@ -1,7 +1,7 @@
-const inialState = {
-    counter : 0
+const initialState = {
+    count: 0
 }
-function counterReducer(state=inialState,action){
+function counterReducer(state=initialState,action){
     if(action.type==="INC"){
         return{...state,count:state.count+1}
     }
@@ -9,7 +9,7 @@ function counterReducer(state=inialState,action){
         return{...state,count:state.count-1}
     }
     if(action.type==="RESET"){
-        return{...state,count:inialState.count}
+        return{...state,count:initialState.count}
     }
     return state
 }
