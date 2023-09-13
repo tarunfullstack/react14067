@@ -24,7 +24,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return {
         addTodoItem:(nt)=>{
-            dispatch({type:"ADDTODO",payload : nt})},
+            dispatch({type:"ADDTODO",payload :nt})},
             deleteTodoItem :(i)=>{
                 dispatch({type:"DELETETODO",payload:i})
             }
