@@ -7,11 +7,30 @@ function Todolist(props){
         <div className="mybox">
             <h1>Todolist</h1>
             <input type="text" onChange={(e)=>{setNT(e.target.value)}}/>
-            <button onClick={()=>{props.dispatch({type:"ADDTODO",payload : nt})}}>Add Todo</button>
-            {props.t.todos.map((todo)=>{
-                return <li>{todo}</li>
+            <button onClick={()=>{props.addTodoItem(nt)}}>Add Todo</button>
+            {props.todos.map((todo,i)=>{
+                return <li>
+                    {todo}
+                    <button onClick={()=>{props.deleteTodoItem(i)}}>Delete</button>
+                    </li>
+                
             })}
         </div>
     )
 }
-export default connect(function(store){return store})(Todolist);
+function mapStateToProps(state){
+    return state.t
+}
+function mapDispatchToProps(dispatch){
+    return {
+        addTodoItem:(nt)=>{
+            dispatch({type:"ADDTODO",payload : nt})},
+            deleteTodoItem :(i)=>{
+                dispatch({type:"DELETETODO",payload:i})
+            }
+        
+
+    }
+
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Todolist);
