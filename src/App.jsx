@@ -6,13 +6,12 @@ import Todolist from "./features/todolist/Todolist";
 function App(){
     return(
         <Provider store={store}>
-       <div className="mybox">
-        <h1>Welcome to Edupoly React Training</h1>
-       
-        <Counter></Counter>
-        <Todolist></Todolist>
-       </div> 
-       </Provider>
+        <div className="mybox">
+            <h1>React Redux Toolkit</h1>
+            <Counter></Counter>
+            <Todolist></Todolist>
+        </div>
+        </Provider>
     )
 }
 export default App;

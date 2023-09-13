@@ -1,19 +1,18 @@
-import {createSlice}from "@reduxjs/toolkit"
+import {createSlice} from "@reduxjs/toolkit"
 const initialState = {
-    todos : ["Virat Kohli","Rohit Sharma","Kl Rahul"]
+    todos : ["Bangalore","Chennai","Mumbai"]
 }
-
-export  const todoSlice = createSlice ({
-    name :  "todolist",
+export const todoSlice = createSlice({
+    name : "todolist",
     initialState,
-    reducers : {
-        addTodo : (state,action)=>{
+    reducers :{
+        addTodo :(state,action)=>{
             state.todos.push(action.payload)
         },
-        deleteTodo : (state,action)=>{
-            state.todos.splice(action.payload,1)
+        deleteTodo :(state,action)=>{
+            state.todos.splice(action.payload,1)  
         }
     }
 })
-export const {addTodo,deleteTodo}=todoSlice.actions;
 export default todoSlice.reducer;
+export var{addTodo,deleteTodo}=todoSlice.actions;
