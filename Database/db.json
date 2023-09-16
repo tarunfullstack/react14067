@@ -1,0 +1,33 @@
+{
+  "books": [
+    {
+      "title": "Html",
+      "author": "Tarun",
+      "id": 1,
+      "purchase": "online"
+    },
+    {
+      "title": "Css",
+      "author": "mani",
+      "id": 2,
+      "purchase": "offline"
+    },
+    {
+      "title": "Java",
+      "author": "suresh",
+      "id": 3,
+      "purchase": "online"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1,
+      "purchase": "online"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
