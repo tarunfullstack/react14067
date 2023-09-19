@@ -1,12 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 import { increment, decrement, reset } from "./counterSlice";
 
 function Counter(){
-  var {count} =  useSelector((state)=>{
-        return state.c
-    })
-   var dispatch =useDispatch() 
+  var {count} =useSelector((state)=>{return state.c})
+   var dispatch=useDispatch() 
     return(
         <div className="mybox">
           <h1>Counter:{count}</h1>
