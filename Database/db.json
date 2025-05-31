@@ -2,19 +2,19 @@
   "books": [
     {
       "title": "Html",
-      "author": "Tarun",
+      "author": "Kohli",
       "id": 1,
       "purchase": "online"
     },
     {
       "title": "Css",
-      "author": "mani",
+      "author": "Rahul",
       "id": 2,
       "purchase": "offline"
     },
     {
       "title": "Java",
-      "author": "suresh",
+      "author": "Raina",
       "id": 3,
       "purchase": "online"
     }
